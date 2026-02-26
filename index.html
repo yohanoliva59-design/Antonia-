@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antonia ❤️</title>
 
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+}
+
+section{
+    padding:60px 20px;
+}
+
+h1{
+    font-size:3em;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:2em;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.2em;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.galeria{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+
+.galeria img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.galeria img:hover{
+    transform:scale(1.05);
+}
+
+button{
+    background:white;
+    color:#ff4b6e;
+    border:none;
+    padding:15px 30px;
+    font-size:1.2em;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff4b6e;
+    color:white;
+}
+
+footer{
+    padding:30px;
+    font-size:0.9em;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+<h1>Antonia Ledezman ❤️</h1>
+<p>Desde el 14 de diciembre empezó algo que jamás imaginé que me haría tan feliz.</p>
+<p>Llevamos casi tres meses… y han sido los meses más lindos de mi vida.</p>
+</section>
+
+<section>
+<h2>Para ti, mi amor 💌</h2>
+<p>
+Antonia… desde que llegaste a mi vida todo cambió.
+Cada día contigo es más bonito, más real, más nuestro.
+No son solo dos meses, son recuerdos, risas,
+mensajes hasta tarde y esa sensación de que quiero seguir construyendo algo contigo.
+</p>
+
+<p>
+Gracias por estos casi tres meses maravillosos.
+Gracias por ser tú.
+Te amo hoy… y todos los días.
+— Yohan ❤️
+</p>
+</section>
+
+<section>
+<h2>Nuestros comienzos ✨</h2>
+<p>Aquí van nuestros recuerdos desde que empezó todo…</p>
+
+<div class="galeria">
+    <img src="foto1.jpg" alt="Nuestro momento 1">
+    <img src="foto2.jpg" alt="Nuestro momento 2">
+    <img src="foto3.jpg" alt="Nuestro momento 3">
+</div>
+</section>
+
+<section>
+<h2>Un botón peligroso 👀</h2>
+<button onclick="mostrarMensaje()">Te amo mugrosa</button>
+<p id="mensajeSecreto" style="margin-top:20px; display:none; font-size:1.3em;"></p>
+</section>
+
+<footer>
+Hecho con amor por Yohan ❤️
+</footer>
+
+<script>
+function mostrarMensaje(){
+    document.getElementById("mensajeSecreto").innerHTML =
+    "Sí, a ti te digo mugrosa… pero eres la mugrosa más hermosa del mundo 😘❤️ Gracias por existir en mi vida.";
+    document.getElementById("mensajeSecreto").style.display = "block";
+}
+</script>
+
+</body>
+</html>
