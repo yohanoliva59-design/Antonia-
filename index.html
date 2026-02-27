@@ -5,40 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Antonia ❤️</title>
 
-<!-- Tipografías románticas -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
     margin:0;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins', sans-serif;
     background: linear-gradient(135deg,#ff758c,#ff7eb3);
     color:white;
     text-align:center;
     overflow-x:hidden;
 }
 
-section{
-    padding:70px 20px;
-}
-
 h1{
-    font-family: 'Great Vibes', cursive;
+    font-family:'Great Vibes', cursive;
     font-size:4em;
-    margin-bottom:10px;
+    margin-top:40px;
 }
 
-h2{
-    font-weight:600;
-    font-size:2em;
-    margin-bottom:20px;
+section{
+    padding:60px 20px;
 }
 
 p{
-    font-size:1.2em;
     max-width:750px;
     margin:auto;
     line-height:1.8;
+    font-size:1.2em;
 }
 
 .galeria{
@@ -50,8 +43,8 @@ p{
 }
 
 .galeria img{
-    width:260px;
-    height:260px;
+    width:250px;
+    height:250px;
     object-fit:cover;
     border-radius:25px;
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
@@ -67,10 +60,10 @@ button{
     color:#ff4b6e;
     border:none;
     padding:15px 35px;
-    font-size:1.2em;
+    font-size:1.1em;
     border-radius:40px;
     cursor:pointer;
-    transition:0.3s;
+    margin-top:20px;
     font-weight:600;
 }
 
@@ -79,68 +72,124 @@ button:hover{
     color:white;
 }
 
-footer{
-    padding:40px;
-    font-size:0.9em;
-    opacity:0.9;
+.timeline{
+    max-width:600px;
+    margin:auto;
+    text-align:left;
+}
+
+.timeline div{
+    margin:15px 0;
+    padding:15px;
+    background:rgba(255,255,255,0.15);
+    border-radius:15px;
+}
+
+#mensajeSecreto, #carta{
+    display:none;
+    margin-top:20px;
+    font-size:1.2em;
+}
+
+/* Corazones */
+.heart{
+    position:fixed;
+    top:-10px;
+    font-size:20px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
 }
 </style>
 </head>
 
 <body>
 
-<section>
 <h1>Antonia Ledezman ❤️</h1>
-<p>Desde el 14 de diciembre empezó la historia más bonita que he vivido.</p>
-<p>Ya casi tres meses contigo… y cada día me enamoro más.</p>
+
+<section>
+<p>Desde el 14 de diciembre comenzó nuestra historia.</p>
+<p>💞 Llevamos <span id="contador"></span> días juntos 💞</p>
 </section>
 
 <section>
-<h2>Para ti, mi amor 💌</h2>
-<p>
-Antonia… llegaste a mi vida y todo cambió.
-Tus abrazos, tus risas, nuestras conversaciones,
-nuestros momentos simples que se volvieron inolvidables.
-No son solo meses… es el comienzo de algo que quiero que dure mucho tiempo.
-</p>
+<h2>Nuestra Historia ✨</h2>
+<div class="timeline">
+<div>📅 14 de diciembre — Empezó lo nuestro.</div>
+<div>💬 Nuestras primeras conversaciones interminables.</div>
+<div>❤️ Nuestro primer “te amo”.</div>
+<div>✨ Hoy — Seguimos escribiendo esta historia juntos.</div>
+</div>
+</section>
 
-<p>
-Gracias por elegirme.
-Gracias por quedarte.
-Te amo hoy, mañana y siempre.
+<section>
+<h2>Nuestros Recuerdos 📸</h2>
+<div class="galeria">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+<img src="foto5.jpg">
+</div>
+</section>
+
+<section>
+<h2>Carta Secreta 💌</h2>
+<button onclick="mostrarCarta()">No leas esto…</button>
+<p id="carta">
+Antonia… gracias por existir en mi vida.
+Gracias por tu risa, por tus abrazos,
+por cada momento simple que se volvió inolvidable.
+Quiero seguir construyendo recuerdos contigo.
+Te amo más de lo que puedo explicar.
 — Yohan ❤️
 </p>
 </section>
 
 <section>
-<h2>Nuestros recuerdos ✨</h2>
-<p>Aquí están algunos de nuestros momentos más lindos.</p>
-
-<div class="galeria">
-    <img src="foto1.jpg" alt="Momento 1">
-    <img src="foto2.jpg" alt="Momento 2">
-    <img src="foto3.jpg" alt="Momento 3">
-    <img src="foto4.jpg" alt="Momento 4">
-    <img src="foto5.jpg" alt="Momento 5">
-</div>
-</section>
-
-<section>
-<h2>Un botón peligroso 👀</h2>
+<h2>Botón peligroso 👀</h2>
 <button onclick="mostrarMensaje()">Te amo mugrosa</button>
-<p id="mensajeSecreto" style="margin-top:25px; display:none; font-size:1.3em;"></p>
+<p id="mensajeSecreto"></p>
 </section>
-
-<footer>
-Hecho con todo mi amor para ti ❤️
-</footer>
 
 <script>
+// Contador de días
+function actualizarContador(){
+    const inicio = new Date("2024-12-14");
+    const hoy = new Date();
+    const diferencia = hoy - inicio;
+    const dias = Math.floor(diferencia / (1000*60*60*24));
+    document.getElementById("contador").innerText = dias;
+}
+actualizarContador();
+
+// Botón secreto
 function mostrarMensaje(){
     document.getElementById("mensajeSecreto").innerHTML =
-    "Sí, a ti te digo mugrosa… pero eres la mugrosa más hermosa del universo 😘❤️ Gracias por hacer mi vida más bonita.";
-    document.getElementById("mensajeSecreto").style.display = "block";
+    "Sí, a ti te digo mugrosa… pero eres la mugrosa más hermosa del universo 😘❤️";
+    document.getElementById("mensajeSecreto").style.display="block";
 }
+
+// Carta
+function mostrarCarta(){
+    document.getElementById("carta").style.display="block";
+}
+
+// Corazones animados
+function crearCorazon(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left = Math.random()*100+"vw";
+    heart.style.animationDuration = (3 + Math.random()*5)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove();},8000);
+}
+setInterval(crearCorazon,500);
 </script>
 
 </body>
